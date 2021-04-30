@@ -1,0 +1,6 @@
+[book]
+authors = ["mikusugar"]
+language = "zh-cn"
+multilingual = false
+src = "src"
+title = "sugar-note"
