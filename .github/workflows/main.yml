@@ -28,7 +28,6 @@ jobs:
         
     - name: build book
       run: |
-        cd sugar-note
         mdbook build
         mv book ../
         git checkout page
@@ -38,6 +37,6 @@ jobs:
         # publish
         git add *
         git commit -m "部署"
-        git push origin page
-        curl https://api.day.app/jv8zA635EkHt4BTrGnNzYh/博客更新成功～
-        curl https://api.day.app/aekqRwEEdLkatYjmtVcHxZ/博客更新成功～
+        git push origin -u page
+        curl https://api.day.app/jv8zA635EkHt4BTrGnNzYh/笔记更新成功～
+        curl https://api.day.app/aekqRwEEdLkatYjmtVcHxZ/笔记更新成功～
