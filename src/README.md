@@ -1,3 +1,4 @@
 # Sugar Note
-个人笔记。
-如有错误 欢迎联系～ syfangjie@live.cn
+## 个人笔记库～
+如有错误,请去这里提交[issue](https://github.com/MikuSugar/sugar-note/issues)
+by mikusugar 2021/05/08
