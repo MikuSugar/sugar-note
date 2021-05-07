@@ -10,12 +10,13 @@ jobs:
       uses: actions/checkout@v1 # 脚本来自 https://github.com/actions/checkou      
     - name: set cargo and install mdbook 
       run: |
+        git config --get remote.origin.url
         sudo apt-get update -y
         sudo apt-get install -y cargo
         cargo install mdbook
     - name: set env
       env:
-        ACTION_DEPLOY_KEY: ${{ secrets.NOTE_DEPLOY_KEY }} 
+        ACTION_DEPLOY_KEY: ${{ secrets.NOTE_DEPLOY_KEY }}
       run: |
         # set up private key for deploy
         mkdir -p ~/.ssh/
