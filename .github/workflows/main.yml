@@ -10,7 +10,6 @@ jobs:
       uses: actions/checkout@v1 # 脚本来自 https://github.com/actions/checkou      
     - name: set cargo and install mdbook 
       run: |
-        git config --get remote.origin.url
         sudo apt-get update -y
         sudo apt-get install -y cargo
         cargo install mdbook
@@ -37,6 +36,7 @@ jobs:
     - name: Deploy
       run: |
         # publish
+        git remote set-url origin git@github.com:MikuSugar/sugar-note.git
         git add *
         git commit -m "部署"
         git push origin
