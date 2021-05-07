@@ -31,7 +31,8 @@ jobs:
         mv book ../
         git checkout page
         git pull origin
-        mv ../book/* ./
+        rm -rf docs || 1
+        mv ../book docs
     - name: Deploy
       run: |
         # publish
