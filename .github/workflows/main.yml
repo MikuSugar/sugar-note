@@ -1,5 +1,5 @@
 name: Deploy note
-on: [push] # 当有新push时运行
+on: [push]
 env:
   TZ: Asia/Shanghai
 jobs:
@@ -19,24 +19,24 @@ jobs:
       run: |
         # set up private key for deploy
         mkdir -p ~/.ssh/
-        echo "$ACTION_DEPLOY_KEY" | tr -d '\r' > ~/.ssh/id_rsa # 配置秘钥
+        echo "$ACTION_DEPLOY_KEY" | tr -d '\r' > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
         ssh-keyscan github.com >> ~/.ssh/known_hosts
         # set git infomation
         git config --global user.name 'mikusugar' 
         git config --global user.email 'syfangjie@live.cn'
-        
     - name: build book
       run: |
         mdbook build
         mv book ../
         git checkout page
-        mv ../book ./
+        git pull origin
+        mv ../book/* ./
     - name: Deploy
       run: |
         # publish
         git add *
         git commit -m "部署"
-        git push origin -u page
+        git push origin
         curl https://api.day.app/jv8zA635EkHt4BTrGnNzYh/笔记更新成功～
         curl https://api.day.app/aekqRwEEdLkatYjmtVcHxZ/笔记更新成功～
