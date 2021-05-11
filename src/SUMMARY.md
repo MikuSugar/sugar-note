@@ -11,4 +11,5 @@
 - [工具](./tool/README.md)
   - [git](./tool/git/README.md)
     - [gitflow](./tool/git/gitflow.md)
-  
+  - [linux](./tool/linux/README.md)
+    -[dd 测试Linux硬盘性能.md](./tool/linux/dd%20测试Linux硬盘性能.md)
