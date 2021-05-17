@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js light">
+<html lang="zh" class="sidebar-visible no-js light">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -1600,7 +1600,7 @@ findSumPairs.count(7);  // 返回 11 ；下标对 (2,1), (2,2), (2,4), (3,1), (3
 <p>记录Linux相关。</p>
 <div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="测试硬盘性能"><a class="header" href="#测试硬盘性能">测试硬盘性能</a></h1>
 <h2 id="linux上测试"><a class="header" href="#linux上测试">Linux上测试</a></h2>
-<p>使用<code>dd</code> 命令简单测试硬盘</p>
+<p>使用<code>dd</code> 命令简单测试硬盘写</p>
 <pre><code class="language-shell">dd if=/dev/zero of=/data/disk1/tmp/test1.img bs=1G count=1 oflag=dsync
 </code></pre>
 <p>参数解释 </p>
@@ -1612,31 +1612,41 @@ findSumPairs.count(7);  // 返回 11 ；下标对 (2,1), (2,2), (2,4), (3,1), (3
 <li><code>oflag=dsync</code> (oflag=dsync) ：使用同步I/O。不要省略这个选项。这个选项能够帮助你去除caching的影响，以便呈现给你精准的结果。</li>
 <li><code>conv=fdatasyn</code>: 这个选项和<code>oflag=dsync</code>含义一样。</li>
 </ul>
-<p>普通HDD写速度:</p>
-<table><thead><tr><th>文件信息</th><th>速度</th></tr></thead><tbody>
-<tr><td>1G</td><td>134MB/S</td></tr>
-<tr><td>512bytes*1000</td><td>265KB/s</td></tr>
-<tr><td>4k*1000</td><td>2.1MB/s</td></tr>
-<tr><td>8k*1000</td><td>4.2MB/S</td></tr>
+<p>使用<code>dd</code>命令测试硬盘读</p>
+<p>例子：</p>
+<pre><code class="language-shell">dd if=/dev/zero of=/tmp/laptop.bin bs=4K count=1000 oflag=direct
+</code></pre>
+<p>普通HDD速度:</p>
+<table><thead><tr><th>文件信息</th><th>写速度</th><th>读速度</th></tr></thead><tbody>
+<tr><td>1G</td><td>134MB/S</td><td>141MB/S</td></tr>
+<tr><td>512bytes*1000</td><td>265KB/S</td><td>500kB/S</td></tr>
+<tr><td>4k*1000</td><td>2.1MB/S</td><td>4.5MB/S</td></tr>
+<tr><td>8k*1000</td><td>4.2MB/S</td><td>8.6MB/S</td></tr>
 </tbody></table>
-<p>AWS EBS写速度（t3.micro）:</p>
-<table><thead><tr><th>文件信息</th><th>速度</th></tr></thead><tbody>
-<tr><td>300MB</td><td>219MB/S</td></tr>
-<tr><td>512bytes*1000</td><td>382kb/s</td></tr>
-<tr><td>4k*1000</td><td>3.3MB/S</td></tr>
-<tr><td>8k*1000</td><td>6.7MB/S</td></tr>
+<p>AWS EBS速度（t3.micro）:</p>
+<table><thead><tr><th>文件信息</th><th>写速度</th><th>读速度</th></tr></thead><tbody>
+<tr><td>300MB</td><td>219MB/S</td><td>166MB/S</td></tr>
+<tr><td>512bytes*1000</td><td>382kb/S</td><td>719kB/S</td></tr>
+<tr><td>4k*1000</td><td>3.3MB/S</td><td>6.5MB/S</td></tr>
+<tr><td>8k*1000</td><td>6.7MB/S</td><td>12.4MB/S</td></tr>
 </tbody></table>
 <h2 id="mac-上测试"><a class="header" href="#mac-上测试">Mac 上测试</a></h2>
 <p>Mac 上的dd命令 单位是小写，如GB位g，MB位m。</p>
-<p>例子：</p>
-<pre><code class="language-shell">dd if=/dev/zero of=test1.img bs=1g count=1  2&gt;&amp;1 | grep sec | awk '{print $1 / 1024 / 1024 / $5, &quot;MB/sec&quot; }'
+<p>跑命令前先执行清空缓存。</p>
+<pre><code class="language-shell">sudo purge
 </code></pre>
-<p>SSD写速度</p>
-<table><thead><tr><th>文件信息</th><th>速度</th></tr></thead><tbody>
-<tr><td>1G</td><td>2361.93 MB/s</td></tr>
-<tr><td>512bytes*1000</td><td>20MB/s</td></tr>
-<tr><td>4k*1000</td><td>823.93Mb/s</td></tr>
-<tr><td>8k*1000</td><td>1505.88Mb/s</td></tr>
+<p>写例子：</p>
+<pre><code class="language-shell">dd if=/dev/zero of=test1.img bs=1g count=1 2&gt;&amp;1 | grep sec | awk '{print $1 / 1024 / 1024 / $5, &quot;MB/sec&quot; }'
+</code></pre>
+<p>读例子：</p>
+<pre><code class="language-shell">dd if=tstfile bs=1g of=/dev/null count=1 2&gt;&amp;1 | grep sec | awk '{print $1 / 1024 / 1024 / $5, &quot;MB/sec&quot; }'
+</code></pre>
+<p>M1 MacBook pro 2020 SSD速度</p>
+<table><thead><tr><th>文件信息</th><th>写速度</th><th>读速度</th></tr></thead><tbody>
+<tr><td>1G</td><td>2532.73 MB/sec</td><td>3367.79 MB/S</td></tr>
+<tr><td>512bytes*1000</td><td>20MB/s</td><td>258.487 MB/S</td></tr>
+<tr><td>4k*1000</td><td>823.93MB/s</td><td>955.307 MB/sec</td></tr>
+<tr><td>8k*1000</td><td>1505.88MB/s</td><td>1521.72 MB/sec</td></tr>
 </tbody></table>
 
                     </main>
