@@ -1,0 +1,493 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>力扣第241场周赛 - sugar-note</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="../../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../../favicon.png">
+        
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">README</a></li><li class="chapter-item expanded "><a href="../../algorithm/index.html"><strong aria-hidden="true">1.</strong> 算法</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../algorithm/leetcode/index.html"><strong aria-hidden="true">1.1.</strong> leetcode</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../algorithm/leetcode/力扣第233场周赛.html"><strong aria-hidden="true">1.1.1.</strong> 力扣第233场周赛</a></li><li class="chapter-item expanded "><a href="../../algorithm/leetcode/力扣第234场周赛.html"><strong aria-hidden="true">1.1.2.</strong> 力扣第234场周赛</a></li><li class="chapter-item expanded "><a href="../../algorithm/leetcode/力扣第235场周赛.html"><strong aria-hidden="true">1.1.3.</strong> 力扣第235场周赛</a></li><li class="chapter-item expanded "><a href="../../algorithm/leetcode/力扣第236场周赛.html"><strong aria-hidden="true">1.1.4.</strong> 力扣第236场周赛</a></li><li class="chapter-item expanded "><a href="../../algorithm/leetcode/力扣第237场周赛.html"><strong aria-hidden="true">1.1.5.</strong> 力扣第237场周赛</a></li><li class="chapter-item expanded "><a href="../../algorithm/leetcode/力扣第240场周赛.html"><strong aria-hidden="true">1.1.6.</strong> 力扣第240场周赛</a></li><li class="chapter-item expanded "><a href="../../algorithm/leetcode/力扣第241场周赛.html" class="active"><strong aria-hidden="true">1.1.7.</strong> 力扣第241场周赛</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../tool/index.html"><strong aria-hidden="true">2.</strong> 工具</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../tool/git/index.html"><strong aria-hidden="true">2.1.</strong> git</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../tool/git/gitflow.html"><strong aria-hidden="true">2.1.1.</strong> gitflow</a></li></ol></li><li class="chapter-item expanded "><a href="../../tool/linux/index.html"><strong aria-hidden="true">2.2.</strong> linux</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../tool/linux/dd 测试Linux硬盘性能.html"><strong aria-hidden="true">2.2.1.</strong> dd 测试Linux硬盘性能</a></li></ol></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">sugar-note</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="力扣第241场周赛"><a class="header" href="#力扣第241场周赛">力扣第241场周赛</a></h1>
+<h2 id="题一-a-hrefhttpsleetcode-cncomproblemssum-of-all-subset-xor-totals找出所有子集的异或总和再求和a"><a class="header" href="#题一-a-hrefhttpsleetcode-cncomproblemssum-of-all-subset-xor-totals找出所有子集的异或总和再求和a">题一 <a href="https://leetcode-cn.com/problems/sum-of-all-subset-xor-totals/">找出所有子集的异或总和再求和</a></a></h2>
+<h3 id="描述"><a class="header" href="#描述">描述</a></h3>
+<p>一个数组的 异或总和 定义为数组中所有元素按位 XOR 的结果；如果数组为 空 ，则异或总和为 0 。</p>
+<p>例如，数组 [2,5,6] 的 异或总和 为 2 XOR 5 XOR 6 = 1 。
+给你一个数组 nums ，请你求出 nums 中每个 子集 的 异或总和 ，计算并返回这些值相加之 和 。</p>
+<p>注意：在本题中，元素 相同 的不同子集应 多次 计数。</p>
+<p>数组 a 是数组 b 的一个 子集 的前提条件是：从 b 删除几个（也可能不删除）元素能够得到 a 。</p>
+<p>示例 1：</p>
+<p>输入：nums = [1,3]
+输出：6
+解释：[1,3] 共有 4 个子集：</p>
+<ul>
+<li>空子集的异或总和是 0 。</li>
+<li>[1] 的异或总和为 1 。</li>
+<li>[3] 的异或总和为 3 。</li>
+<li>[1,3] 的异或总和为 1 XOR 3 = 2 。
+0 + 1 + 3 + 2 = 6
+示例 2：</li>
+</ul>
+<p>输入：nums = [5,1,6]
+输出：28
+解释：[5,1,6] 共有 8 个子集：</p>
+<ul>
+<li>空子集的异或总和是 0 。</li>
+<li>[5] 的异或总和为 5 。</li>
+<li>[1] 的异或总和为 1 。</li>
+<li>[6] 的异或总和为 6 。</li>
+<li>[5,1] 的异或总和为 5 XOR 1 = 4 。</li>
+<li>[5,6] 的异或总和为 5 XOR 6 = 3 。</li>
+<li>[1,6] 的异或总和为 1 XOR 6 = 7 。</li>
+<li>[5,1,6] 的异或总和为 5 XOR 1 XOR 6 = 2 。
+0 + 5 + 1 + 6 + 4 + 3 + 7 + 2 = 28
+示例 3：</li>
+</ul>
+<p>输入：nums = [3,4,5,6,7,8]
+输出：480
+解释：每个子集的全部异或总和值之和为 480 。</p>
+<p>提示：</p>
+<p>1 &lt;= nums.length &lt;= 12
+1 &lt;= nums[i] &lt;= 20</p>
+<h3 id="思路"><a class="header" href="#思路">思路</a></h3>
+<p>DFS 遍历所有可能。</p>
+<h3 id="代码"><a class="header" href="#代码">代码</a></h3>
+<pre><code class="language-java">public class N1 {
+    private int sum;
+    public int subsetXORSum(int[] nums) {
+        sum=0;
+        dfs(0,nums,0);
+        return sum;
+    }
+
+    private void dfs(int pre, int[] nums, int idx) {
+        if(idx&gt;= nums.length)return;
+        final int next = pre ^ nums[idx];
+        sum+=next;
+        dfs(next,nums,idx+1);
+        dfs(pre,nums,idx+1);
+    }
+
+}
+</code></pre>
+<h2 id="题二-a-hrefhttpsleetcode-cncomproblemsminimum-number-of-swaps-to-make-the-binary-string-alternating构成交替字符串需要的最小交换次数a"><a class="header" href="#题二-a-hrefhttpsleetcode-cncomproblemsminimum-number-of-swaps-to-make-the-binary-string-alternating构成交替字符串需要的最小交换次数a">题二 <a href="https://leetcode-cn.com/problems/minimum-number-of-swaps-to-make-the-binary-string-alternating/">构成交替字符串需要的最小交换次数</a></a></h2>
+<h3 id="描述-1"><a class="header" href="#描述-1">描述</a></h3>
+<p>给你一个二进制字符串 s ，现需要将其转化为一个 交替字符串 。请你计算并返回转化所需的 最小 字符交换次数，如果无法完成转化，返回 -1 。</p>
+<p>交替字符串 是指：相邻字符之间不存在相等情况的字符串。例如，字符串 &quot;010&quot; 和 &quot;1010&quot; 属于交替字符串，但 &quot;0100&quot; 不是。</p>
+<p>任意两个字符都可以进行交换，不必相邻 。</p>
+<p>示例 1：</p>
+<p>输入：s = &quot;111000&quot;
+输出：1
+解释：交换位置 1 和 4：&quot;111000&quot; -&gt; &quot;101010&quot; ，字符串变为交替字符串。
+示例 2：</p>
+<p>输入：s = &quot;010&quot;
+输出：0
+解释：字符串已经是交替字符串了，不需要交换。
+示例 3：</p>
+<p>输入：s = &quot;1110&quot;
+输出：-1</p>
+<p>提示：</p>
+<p>1 &lt;= s.length &lt;= 1000
+s[i] 的值为 '0' 或 '1'</p>
+<h3 id="思路-1"><a class="header" href="#思路-1">思路</a></h3>
+<ul>
+<li>统计出1和0的个数</li>
+<li>如果1和0的个数差距大于1 则无法构成交替字符串</li>
+<li>如果1和0的个数相等：
+<ul>
+<li>统计偶数位是1需要交替的次数。</li>
+<li>统计偶数位是0需要交替的次数。</li>
+<li>取上面的最小值。</li>
+</ul>
+</li>
+<li>如果1的个数大于0的个数，则说明偶数位一定是1</li>
+<li>如果1的个数小于0的个数，则说明偶数位一定是0。</li>
+</ul>
+<h3 id="代码-1"><a class="header" href="#代码-1">代码</a></h3>
+<pre><code class="language-java">public class N2 {
+    public static void main(String[] args) {
+        System.out.println(new N2().minSwaps(&quot;00011110110110000000000110110101011101111011111101010010010000000000000001101101010010001011110000001101111111110000110101101101001011000011111011101101100110011111110001100110001110000000001100010111110100111001001111100001000110101111010011001&quot;));
+    }
+    public int minSwaps(String s) {
+        final char[] strs = s.toCharArray();
+        int cnt0,cnt1;
+        cnt0=cnt1=0;
+        for (char c:strs){
+            if(c=='0')cnt0++;
+            else cnt1++;
+        }
+        if(Math.abs(cnt0-cnt1)!=1&amp;&amp;cnt0!=cnt1)return -1;
+        int res=0;
+        if(cnt0&gt;cnt1){
+            for (int i=0;i&lt;strs.length;i+=2){
+                if(strs[i]=='1')res++;
+            }
+        }
+        else if(cnt0==cnt1){
+            int res1=0;
+            int res2=0;
+            for (int i=0;i&lt;strs.length;i+=2){
+                if(strs[i]=='0')res1++;
+                else res2++;
+            }
+            res=Math.min(res1,res2);
+        }
+        else {
+            for (int i=0;i&lt;strs.length;i+=2){
+                if(strs[i]=='0')res++;
+            }
+        }
+        return res;
+
+    }
+}
+</code></pre>
+<h2 id="题三-a-hrefhttpsleetcode-cncomproblemsfinding-pairs-with-a-certain-sum找出和为指定值的下标对a"><a class="header" href="#题三-a-hrefhttpsleetcode-cncomproblemsfinding-pairs-with-a-certain-sum找出和为指定值的下标对a">题三 <a href="https://leetcode-cn.com/problems/finding-pairs-with-a-certain-sum/">找出和为指定值的下标对</a></a></h2>
+<h3 id="描述-2"><a class="header" href="#描述-2">描述</a></h3>
+<p>给你两个整数数组 nums1 和 nums2 ，请你实现一个支持下述两类查询的数据结构：</p>
+<p>累加 ，将一个正整数加到 nums2 中指定下标对应元素上。
+计数 ，统计满足 nums1[i] + nums2[j] 等于指定值的下标对 (i, j) 数目（0 &lt;= i &lt; nums1.length 且 0 &lt;= j &lt; nums2.length）。
+实现 FindSumPairs 类：</p>
+<p>FindSumPairs(int[] nums1, int[] nums2) 使用整数数组 nums1 和 nums2 初始化 FindSumPairs 对象。
+void add(int index, int val) 将 val 加到 nums2[index] 上，即，执行 nums2[index] += val 。
+int count(int tot) 返回满足 nums1[i] + nums2[j] == tot 的下标对 (i, j) 数目。</p>
+<p>示例：</p>
+<p>输入：
+[&quot;FindSumPairs&quot;, &quot;count&quot;, &quot;add&quot;, &quot;count&quot;, &quot;count&quot;, &quot;add&quot;, &quot;add&quot;, &quot;count&quot;]
+[[[1, 1, 2, 2, 2, 3], [1, 4, 5, 2, 5, 4]], [7], [3, 2], [8], [4], [0, 1], [1, 1], [7]]
+输出：
+[null, 8, null, 2, 1, null, null, 11]</p>
+<p>解释：
+FindSumPairs findSumPairs = new FindSumPairs([1, 1, 2, 2, 2, 3], [1, 4, 5, 2, 5, 4]);
+findSumPairs.count(7);  // 返回 8 ; 下标对 (2,2), (3,2), (4,2), (2,4), (3,4), (4,4) 满足 2 + 5 = 7 ，下标对 (5,1), (5,5) 满足 3 + 4 = 7
+findSumPairs.add(3, 2); // 此时 nums2 = [1,4,5,4,5,4]
+findSumPairs.count(8);  // 返回 2 ；下标对 (5,2), (5,4) 满足 3 + 5 = 8
+findSumPairs.count(4);  // 返回 1 ；下标对 (5,0) 满足 3 + 1 = 4
+findSumPairs.add(0, 1); // 此时 nums2 = [2,4,5,4,5,4]
+findSumPairs.add(1, 1); // 此时 nums2 = [2,5,5,4,5,4]
+findSumPairs.count(7);  // 返回 11 ；下标对 (2,1), (2,2), (2,4), (3,1), (3,2), (3,4), (4,1), (4,2), (4,4) 满足 2 + 5 = 7 ，下标对 (5,3), (5,5) 满足 3 + 4 = 7</p>
+<p>提示：</p>
+<p>1 &lt;= nums1.length &lt;= 1000
+1 &lt;= nums2.length &lt;= 10^5
+1 &lt;= nums1[i] &lt;= 10^9
+1 &lt;= nums2[i] &lt;= 10^5
+0 &lt;= index &lt; nums2.length
+1 &lt;= val &lt;= 10^5
+1 &lt;= tot &lt;= 10^9
+最多调用 add 和 count 函数各 1000 次</p>
+<h3 id="思路-2"><a class="header" href="#思路-2">思路</a></h3>
+<ul>
+<li>将数据分别额外存储在两个Map中。key是值，value是个数</li>
+<li>add操作的同时更新map2相关KV对</li>
+<li>求count的是遍历size小的map找出对应map的value，对数相当于两个value相乘。</li>
+</ul>
+<h3 id="代码-2"><a class="header" href="#代码-2">代码</a></h3>
+<pre><code class="language-java">class FindSumPairs {
+
+    private int[] nums2;
+    private Map&lt;Integer,Integer&gt; map1;
+    private Map&lt;Integer,Integer&gt; map2;
+    public FindSumPairs(int[] nums1, int[] nums2) {
+        this.nums2=nums2;
+        map1=new HashMap&lt;&gt;();
+        map2=new HashMap&lt;&gt;();
+        for (int i:nums1)map1.put(i,map1.getOrDefault(i,0)+1);
+        for (int i:nums2)map2.put(i,map2.getOrDefault(i,0)+1);
+    }
+
+    public void add(int index, int val) {
+        final int cnt = map2.getOrDefault(nums2[index], 0) - 1;
+        if(cnt==0)map2.remove(nums2[index]);
+        else map2.put(nums2[index],cnt);
+        nums2[index]+=val;
+        map2.put(nums2[index],map2.getOrDefault(nums2[index],0)+1);
+    }
+
+    public int count(int tot) {
+        Map&lt;Integer,Integer&gt; m1;
+        Map&lt;Integer,Integer&gt; m2;
+        if(map1.size()&lt;=map2.size()){
+            m1=map1;
+            m2=map2;
+        }else {
+            m1=map2;
+            m2=map1;
+        }
+        int res=0;
+        for (Map.Entry&lt;Integer,Integer&gt; e:m1.entrySet()){
+            res+=e.getValue()*m2.getOrDefault(tot-e.getKey(),0);
+        }
+        return res;
+    }
+}
+</code></pre>
+<h2 id="题四-a-hrefhttpsleetcode-cncomproblemsnumber-of-ways-to-rearrange-sticks-with-k-sticks-visible恰有-k-根木棍可以看到的排列数目a"><a class="header" href="#题四-a-hrefhttpsleetcode-cncomproblemsnumber-of-ways-to-rearrange-sticks-with-k-sticks-visible恰有-k-根木棍可以看到的排列数目a">题四 <a href="https://leetcode-cn.com/problems/number-of-ways-to-rearrange-sticks-with-k-sticks-visible/">恰有 K 根木棍可以看到的排列数目</a></a></h2>
+<h3 id="描述-3"><a class="header" href="#描述-3">描述</a></h3>
+<p>有 n 根长度互不相同的木棍，长度为从 1 到 n 的整数。请你将这些木棍排成一排，并满足从左侧 可以看到 恰好 k 根木棍。从左侧 可以看到 木棍的前提是这个木棍的 左侧 不存在比它 更长的 木棍。</p>
+<p>例如，如果木棍排列为 [1,3,2,5,4] ，那么从左侧可以看到的就是长度分别为 1、3 、5 的木棍。
+给你 n 和 k ，返回符合题目要求的排列 数目 。由于答案可能很大，请返回对 109 + 7 取余 的结果。</p>
+<p>示例 1：</p>
+<p>输入：n = 3, k = 2
+输出：3
+解释：[1,3,2], [2,3,1] 和 [2,1,3] 是仅有的能满足恰好 2 根木棍可以看到的排列。
+可以看到的木棍已经用粗体+斜体标识。
+示例 2：</p>
+<p>输入：n = 5, k = 5
+输出：1
+解释：[1,2,3,4,5] 是唯一一种能满足全部 5 根木棍可以看到的排列。
+可以看到的木棍已经用粗体+斜体标识。
+示例 3：</p>
+<p>输入：n = 20, k = 11
+输出：647427950
+解释：总共有 647427950 (mod 109 + 7) 种能满足恰好有 11 根木棍可以看到的排列。</p>
+<p>提示：</p>
+<p>1 &lt;= n &lt;= 1000
+1 &lt;= k &lt;= n</p>
+<h3 id="思路-3"><a class="header" href="#思路-3">思路</a></h3>
+<p><img src="https://cdn.jsdelivr.net/gh/mikusugar/PictureBed@master/uPic/9O0fYc.jpg" alt="9O0fYc" /></p>
+<h3 id="代码-3"><a class="header" href="#代码-3">代码</a></h3>
+<p><img src="https://cdn.jsdelivr.net/gh/mikusugar/PictureBed@master/uPic/9O0fYc.jpg" alt="9O0fYc" /></p>
+
+                    </main>
+
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../../algorithm/leetcode/力扣第240场周赛.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../../tool/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+                <div id="disqus_thread"></div>
+                <script>
+                    /**
+                     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+                    /*
+                    var disqus_config = function () {
+                    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    };
+                    */
+                    (function() { // DON'T EDIT BELOW THIS LINE
+                        var d = document, s = d.createElement('script');
+                        s.src = 'https://mikusugar-me.disqus.com/embed.js';
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../../algorithm/leetcode/力扣第240场周赛.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../../tool/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
