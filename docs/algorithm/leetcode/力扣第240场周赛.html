@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="zh" class="sidebar-visible no-js light">
+<html lang="zh-CN" class="sidebar-visible no-js light">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -13,7 +13,7 @@
 
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="">
+        <meta name="description" content="mikusugar的笔记整理">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
@@ -356,16 +356,72 @@ public class N3 {
 <p>提示：</p>
 <p>n == colors.length
 m == edges.length
-1 &lt;= n &lt;= 105
-0 &lt;= m &lt;= 105
+1 &lt;= n &lt;= 10^5
+0 &lt;= m &lt;= 10^5
 colors 只含有小写英文字母。
 0 &lt;= aj, bj &lt; n</p>
 <h3 id="思路-3"><a class="header" href="#思路-3">思路</a></h3>
-<p>没有</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mikusugar/PictureBed@master/uPic/9O0fYc.jpg" alt="9O0fYc" /></p>
+<p>拓扑排序加动态规划</p>
+<ul>
+<li>
+<p>如果存在环则不存在拓扑排序。</p>
+</li>
+<li>
+<p>如果a-&gt;b，那么在拓扑排序中 b一定在a的后面，所以一条路径上点的顺序与拓扑排序的顺序是一致的。</p>
+</li>
+<li>
+<pre><code class="language-bash">dp[next][color]=Math.mac(dp[next][color],dp[cur][color])
+</code></pre>
+</li>
+</ul>
 <h3 id="代码-3"><a class="header" href="#代码-3">代码</a></h3>
-<p>没有</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mikusugar/PictureBed@master/uPic/9O0fYc.jpg" alt="9O0fYc" /></p>
+<pre><code class="language-java">import java.util.*;
+
+public class N4 {
+    public int largestPathValue(String colors, int[][] edges) {
+        final int n=colors.length();
+        final char[] c=colors.toCharArray();
+        List&lt;Integer&gt;[] graph=new List[n];
+        for (int i=0;i&lt;n;i++)graph[i]=new ArrayList&lt;&gt;();
+
+        int[] in=new int[n];
+        for (int[] e:edges){
+            in[e[1]]++;
+            graph[e[0]].add(e[1]);
+        }
+
+        int found=0;
+        Queue&lt;Integer&gt; queue=new ArrayDeque&lt;&gt;(n);
+        for (int i=0;i&lt;in.length;i++){
+            if(in[i]==0)queue.add(i);
+        }
+        int[][] dp=new int[n][26];
+        while (!queue.isEmpty()){
+            int cur=queue.poll();
+            found++;
+            dp[cur][c[cur]-'a']++;
+            for (int next:graph[cur]){
+                in[next]--;
+                if(in[next]==0)queue.add(next);
+                for (int i=0;i&lt;26;i++){
+                    dp[next][i]=Math.max(dp[cur][i],dp[next][i]);
+                }
+            }
+            if(found&gt;n)return -1;
+        }
+        if(found!=n)return -1;
+        int res=0;
+        for (int[] d:dp){
+            for (int i:d)res=Math.max(i,res);
+        }
+
+        return res;
+
+    }
+
+
+}
+</code></pre>
 
                     </main>
 
