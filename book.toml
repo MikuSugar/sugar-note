@@ -1,6 +1,7 @@
 [book]
 authors = ["mikusugar"]
-language = "zh"
+description = "mikusugar的笔记整理"
+language = "zh-CN"
 multilingual = false
 src = "src"
 title = "sugar-note"
