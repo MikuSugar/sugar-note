@@ -9,6 +9,7 @@
     - [力扣第237场周赛](./algorithm/leetcode/力扣第237场周赛.md)   
     - [力扣第240场周赛](./algorithm/leetcode/力扣第240场周赛.md)
     - [力扣第241场周赛](./algorithm/leetcode/力扣第241场周赛.md)
+    - [力扣第243场周赛](./algorithm/leetcode/力扣第243场周赛.md)
 
 - [工具](./tool/README.md)
   - [git](./tool/git/README.md)
