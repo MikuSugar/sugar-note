@@ -1799,9 +1799,36 @@ findSumPairs.count(7);  // 返回 11 ；下标对 (2,1), (2,2), (2,4), (3,1), (3
 输出：-1
 解释：即使跳过所有的休息时间，也无法准时参加会议。</p>
 <h3 id="思路-31"><a class="header" href="#思路-31">思路</a></h3>
-<p><img src="https://cdn.jsdelivr.net/gh/mikusugar/PictureBed@master/uPic/9O0fYc.jpg" alt="9O0fYc" /></p>
+<p>动态规划</p>
+<pre><code class="language-bash">#dp[i][j] 表示第i条路休息j次的最小时间。
+#dp[i][j]=Math.min(dp[i-1][j]+dist[i]/speed,dp[i-1][j-1]+dist[i]/speed)
+#为了避免浮点计算乘以速度变成整数计算
+#dp[i][j] 表示第i条路休息j次的最小时间乘以速度。
+#dp[i][j]=Math.min(dp[i-1][j-1]+dist[i],Math.ceil((dp[i-1][j]+dist[i])/speed)*speed)
+</code></pre>
 <h3 id="代码-31"><a class="header" href="#代码-31">代码</a></h3>
-<p><img src="https://cdn.jsdelivr.net/gh/mikusugar/PictureBed@master/uPic/9O0fYc.jpg" alt="9O0fYc" /></p>
+<pre><code class="language-java">import java.util.Arrays;
+
+public class N4 {
+
+    public int minSkips(int[] dist, int speed, int hoursBefore) {
+        final long MAX=Long.MAX_VALUE&gt;&gt;2;
+        final long[][] dp =new long[dist.length+1][dist.length+1];
+        for (long[] arr:dp) Arrays.fill(arr,MAX);
+        dp[0][0]=0;
+        for (int i=1;i&lt;dp.length;i++){
+            for (int j=0;j&lt;=i;j++){
+                if(i!=j) dp[i][j] = Math.min(dp[i][j],(long) Math.ceil((dp[i-1][j]+dist[i-1])*1.0/speed)*speed);
+                if(j!=0) dp[i][j] = Math.min(dp[i][j],dp[i-1][j-1]+dist[i-1]);
+            }
+        }
+        for (int j=0;j&lt; dp.length;j++){
+            if(dp[dp.length-1][j] &lt;= (long) hoursBefore *speed)return j;
+        }
+        return -1;
+    }
+}
+</code></pre>
 <h2 id="其它"><a class="header" href="#其它">其它</a></h2>
 <p>不进则退，空了一礼拜没打，排名刷新下限。</p>
 <p><img src="https://i.loli.net/2021/06/02/mepnho6SBQdrA1b.jpg" alt="mepnho6SBQdrA1b" /></p>
