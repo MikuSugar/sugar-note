@@ -18,3 +18,7 @@
     - [gitflow](./tool/git/gitflow.md)
   - [linux](./tool/linux/README.md)
   - [测试硬盘性能](./tool/测试硬盘性能.md)
+
+  
+- [大数据](./bigdata/README.md)
+  - [hive metastore java api](./bigdata/hive_metastore_java_api.md)  
