@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>gitflow - sugar-note</title>
+        <title>Flink任务提交入口 - sugar-note</title>
         <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="mikusugar的笔记整理">
@@ -75,7 +75,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">README</a></li><li class="chapter-item expanded "><a href="../../algorithm/index.html"><strong aria-hidden="true">1.</strong> 算法</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../algorithm/leetcode/index.html"><strong aria-hidden="true">1.1.</strong> leetcode</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../algorithm/leetcode/力扣第233场周赛.html"><strong aria-hidden="true">1.1.1.</strong> 力扣第233场周赛</a></li><li class="chapter-item expanded "><a href="../../algorithm/leetcode/力扣第234场周赛.html"><strong aria-hidden="true">1.1.2.</strong> 力扣第234场周赛</a></li><li class="chapter-item expanded "><a href="../../algorithm/leetcode/力扣第235场周赛.html"><strong aria-hidden="true">1.1.3.</strong> 力扣第235场周赛</a></li><li class="chapter-item expanded "><a href="../../algorithm/leetcode/力扣第236场周赛.html"><strong aria-hidden="true">1.1.4.</strong> 力扣第236场周赛</a></li><li class="chapter-item expanded "><a href="../../algorithm/leetcode/力扣第237场周赛.html"><strong aria-hidden="true">1.1.5.</strong> 力扣第237场周赛</a></li><li class="chapter-item expanded "><a href="../../algorithm/leetcode/力扣第240场周赛.html"><strong aria-hidden="true">1.1.6.</strong> 力扣第240场周赛</a></li><li class="chapter-item expanded "><a href="../../algorithm/leetcode/力扣第241场周赛.html"><strong aria-hidden="true">1.1.7.</strong> 力扣第241场周赛</a></li><li class="chapter-item expanded "><a href="../../algorithm/leetcode/力扣第243场周赛.html"><strong aria-hidden="true">1.1.8.</strong> 力扣第243场周赛</a></li><li class="chapter-item expanded "><a href="../../algorithm/leetcode/力扣第244场周赛.html"><strong aria-hidden="true">1.1.9.</strong> 力扣第244场周赛</a></li><li class="chapter-item expanded "><a href="../../algorithm/leetcode/力扣第252场周赛.html"><strong aria-hidden="true">1.1.10.</strong> 力扣第252场周赛</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../tool/index.html"><strong aria-hidden="true">2.</strong> 工具</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../tool/git/index.html"><strong aria-hidden="true">2.1.</strong> git</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../tool/git/gitflow.html" class="active"><strong aria-hidden="true">2.1.1.</strong> gitflow</a></li></ol></li><li class="chapter-item expanded "><a href="../../tool/linux/index.html"><strong aria-hidden="true">2.2.</strong> linux</a></li><li class="chapter-item expanded "><a href="../../tool/测试硬盘性能.html"><strong aria-hidden="true">2.3.</strong> 测试硬盘性能</a></li></ol></li><li class="chapter-item expanded "><a href="../../bigdata/index.html"><strong aria-hidden="true">3.</strong> 大数据</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../bigdata/hive_metastore_java_api.html"><strong aria-hidden="true">3.1.</strong> hive metastore java api</a></li><li class="chapter-item expanded "><a href="../../bigdata/index.html"><strong aria-hidden="true">3.2.</strong> Flink</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../bigdata/flink/Flink任务提交入口.html"><strong aria-hidden="true">3.2.1.</strong> Flink任务提交入口</a></li></ol></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">README</a></li><li class="chapter-item expanded "><a href="../../algorithm/index.html"><strong aria-hidden="true">1.</strong> 算法</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../algorithm/leetcode/index.html"><strong aria-hidden="true">1.1.</strong> leetcode</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../algorithm/leetcode/力扣第233场周赛.html"><strong aria-hidden="true">1.1.1.</strong> 力扣第233场周赛</a></li><li class="chapter-item expanded "><a href="../../algorithm/leetcode/力扣第234场周赛.html"><strong aria-hidden="true">1.1.2.</strong> 力扣第234场周赛</a></li><li class="chapter-item expanded "><a href="../../algorithm/leetcode/力扣第235场周赛.html"><strong aria-hidden="true">1.1.3.</strong> 力扣第235场周赛</a></li><li class="chapter-item expanded "><a href="../../algorithm/leetcode/力扣第236场周赛.html"><strong aria-hidden="true">1.1.4.</strong> 力扣第236场周赛</a></li><li class="chapter-item expanded "><a href="../../algorithm/leetcode/力扣第237场周赛.html"><strong aria-hidden="true">1.1.5.</strong> 力扣第237场周赛</a></li><li class="chapter-item expanded "><a href="../../algorithm/leetcode/力扣第240场周赛.html"><strong aria-hidden="true">1.1.6.</strong> 力扣第240场周赛</a></li><li class="chapter-item expanded "><a href="../../algorithm/leetcode/力扣第241场周赛.html"><strong aria-hidden="true">1.1.7.</strong> 力扣第241场周赛</a></li><li class="chapter-item expanded "><a href="../../algorithm/leetcode/力扣第243场周赛.html"><strong aria-hidden="true">1.1.8.</strong> 力扣第243场周赛</a></li><li class="chapter-item expanded "><a href="../../algorithm/leetcode/力扣第244场周赛.html"><strong aria-hidden="true">1.1.9.</strong> 力扣第244场周赛</a></li><li class="chapter-item expanded "><a href="../../algorithm/leetcode/力扣第252场周赛.html"><strong aria-hidden="true">1.1.10.</strong> 力扣第252场周赛</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../tool/index.html"><strong aria-hidden="true">2.</strong> 工具</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../tool/git/index.html"><strong aria-hidden="true">2.1.</strong> git</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../tool/git/gitflow.html"><strong aria-hidden="true">2.1.1.</strong> gitflow</a></li></ol></li><li class="chapter-item expanded "><a href="../../tool/linux/index.html"><strong aria-hidden="true">2.2.</strong> linux</a></li><li class="chapter-item expanded "><a href="../../tool/测试硬盘性能.html"><strong aria-hidden="true">2.3.</strong> 测试硬盘性能</a></li></ol></li><li class="chapter-item expanded "><a href="../../bigdata/index.html"><strong aria-hidden="true">3.</strong> 大数据</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../bigdata/hive_metastore_java_api.html"><strong aria-hidden="true">3.1.</strong> hive metastore java api</a></li><li class="chapter-item expanded "><a href="../../bigdata/index.html"><strong aria-hidden="true">3.2.</strong> Flink</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../bigdata/flink/Flink任务提交入口.html" class="active"><strong aria-hidden="true">3.2.1.</strong> Flink任务提交入口</a></li></ol></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -134,86 +134,53 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="git-flow"><a class="header" href="#git-flow">git flow</a></h1>
-<h2 id="安装"><a class="header" href="#安装">安装</a></h2>
-<pre><code class="language-bash">brew install git-flow-avh
+                        <h1 id="flink-任务提交入口"><a class="header" href="#flink-任务提交入口">Flink 任务提交入口</a></h1>
+<h2 id="入口类"><a class="header" href="#入口类">入口类</a></h2>
+<p><code>org.apache.flink.client.cli.CliFrontend</code></p>
+<h3 id="main"><a class="header" href="#main">main</a></h3>
+<pre><code class="language-java">public static void main(final String[] args) {
+		EnvironmentInformation.logEnvironmentInfo(LOG, &quot;Command Line Client&quot;, args);
+
+		// 1. find the configuration directory
+		/*获取flink的conf目录的路径*/
+		final String configurationDirectory = getConfigurationDirectoryFromEnv();
+
+		// 2. load the global configuration
+		/*据conf路径，加载配置*/
+		final Configuration configuration = GlobalConfiguration.loadConfiguration(configurationDirectory);
+
+		// 3. load the custom command lines
+		/*封装命令行接口：按顺序Generic、Yarn、Default*/
+		final List&lt;CustomCommandLine&gt; customCommandLines = loadCustomCommandLines(
+			configuration,
+			configurationDirectory);
+
+		try {
+			final CliFrontend cli = new CliFrontend(
+				configuration,
+				customCommandLines);
+
+			SecurityUtils.install(new SecurityConfiguration(cli.configuration));
+			int retCode = SecurityUtils.getInstalledContext()
+					.runSecured(() -&gt; cli.parseAndRun(args));
+			System.exit(retCode);
+		}
+		catch (Throwable t) {
+			final Throwable strippedThrowable = ExceptionUtils.stripException(t, UndeclaredThrowableException.class);
+			LOG.error(&quot;Fatal error while running command line interface.&quot;, strippedThrowable);
+			strippedThrowable.printStackTrace();
+			System.exit(31);
+		}
+	}
 </code></pre>
-<h2 id="使用"><a class="header" href="#使用">使用</a></h2>
-<p><img src="https://cdn.jsdelivr.net/gh/mikusugar/PictureBed@master/uPic/OZH3W0.jpg" alt="命令" /></p>
-<h3 id="初始化"><a class="header" href="#初始化">初始化</a></h3>
-<pre><code class="language-bash">git flow init 
-</code></pre>
-<h3 id="特性"><a class="header" href="#特性">特性</a></h3>
-<h4 id="增加新特性"><a class="header" href="#增加新特性">增加新特性</a></h4>
-<p>新特性的开发是基于 'develop' 分支的。</p>
-<p>通过下面的命令开始开发新特性：</p>
-<pre><code class="language-bash">git flow feature start MYFEATURE
-</code></pre>
-<p>这个操作创建了一个基于'develop'的特性分支，并切换到这个分支之下。</p>
-<h4 id="完成新特性"><a class="header" href="#完成新特性">完成新特性</a></h4>
-<p>完成开发新特性。这个动作执行下面的操作.</p>
-<ul>
-<li>合并 MYFEATURE 分支到 'develop'</li>
-<li>删除这个新特性分支</li>
-<li>切换回 'develop' 分支</li>
-</ul>
-<pre><code class="language-bash">git flow feature finish MYFEATURE
-</code></pre>
-<h4 id="发布新特性"><a class="header" href="#发布新特性">发布新特性</a></h4>
-<p>发布新特性分支到远程服务器，所以，其它用户也可以使用这分支。</p>
-<pre><code class="language-bash">git flow feature publish MYFEATURE
-</code></pre>
-<h4 id="取得一个发布的新特性分支"><a class="header" href="#取得一个发布的新特性分支">取得一个发布的新特性分支</a></h4>
-<p>取得其它用户发布的新特性分支，并签出远程的变更。</p>
-<pre><code class="language-bash">git flow feature pull origin MYFEATURE
-</code></pre>
-<p>使用下列命令追踪origin上的特性分支</p>
-<pre><code class="language-bash">git flow feature track MYFEATURE
-</code></pre>
-<h3 id="release"><a class="header" href="#release">release</a></h3>
-<h4 id="准备release"><a class="header" href="#准备release">准备release</a></h4>
-<p>它从 'develop' 分支开始创建一个 release 分支。</p>
-<pre><code class="language-bash">git flow release start RELEASE [BASE]
-</code></pre>
-<p>你可以选择提供一个 <code>[BASE]</code>参数，即提交记录的 sha-1 hash 值，来开启动 release 分支. 这个提交记录的 sha-1 hash 值必须是'develop' 分支下的。</p>
-<h4 id="发布release"><a class="header" href="#发布release">发布release</a></h4>
-<pre><code class="language-bash">git flow release publish RELEASE
-</code></pre>
-<p>通过以下命令签出release版本的远程变更</p>
-<pre><code class="language-bash">git flow release track RELEASE
-</code></pre>
-<h4 id="完成release"><a class="header" href="#完成release">完成release</a></h4>
-<p>完成 release 版本是一个大 git 分支操作。它执行下面几个动作：</p>
-<ul>
-<li>归并 release 分支到 'master' 分支</li>
-<li>用 release 分支名打 Tag</li>
-<li>归并 release 分支到 'develop'</li>
-<li>移除 release 分支</li>
-</ul>
-<pre><code class="language-bash">git flow release finish RELEASE
-</code></pre>
-<h3 id="紧急修复"><a class="header" href="#紧急修复">紧急修复</a></h3>
-<h4 id="开始紧急修复"><a class="header" href="#开始紧急修复">开始紧急修复</a></h4>
-<pre><code class="language-bash">git flow hotfix start VERSION [BASENAME]
-</code></pre>
-<p>VERSION 参数标记着修正版本。你可以从 [BASENAME]开始，<code>[BASENAME]</code>为finish release时填写的版本号</p>
-<h4 id="完成紧急修复"><a class="header" href="#完成紧急修复">完成紧急修复</a></h4>
-<p>当完成紧急修复分支，代码归并回 develop 和 master 分支。相应地，master 分支打上修正版本的 TAG。</p>
-<pre><code class="language-bash">git flow hotfix finish VERSION
-</code></pre>
-<h2 id="参考"><a class="header" href="#参考">参考</a></h2>
-<p>http://danielkummer.github.io/git-flow-cheatsheet/index.zh_CN.html</p>
 
                     </main>
 
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../../tool/git/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../../bigdata/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
-                            </a>
-                            <a rel="next" href="../../tool/linux/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
                             </a>
                         <div style="clear: both"></div>
                     </nav>
@@ -240,11 +207,8 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../../tool/git/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../../bigdata/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
-                    </a>
-                    <a rel="next" href="../../tool/linux/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
 
