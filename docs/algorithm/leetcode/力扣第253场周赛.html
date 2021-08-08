@@ -1,0 +1,407 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>力扣第253场周赛 - sugar-note</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="mikusugar的笔记整理">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">README</a></li><li class="chapter-item expanded "><a href="../../algorithm/index.html"><strong aria-hidden="true">1.</strong> 算法</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../algorithm/leetcode/index.html"><strong aria-hidden="true">1.1.</strong> leetcode</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../algorithm/leetcode/力扣第233场周赛.html"><strong aria-hidden="true">1.1.1.</strong> 力扣第233场周赛</a></li><li class="chapter-item expanded "><a href="../../algorithm/leetcode/力扣第234场周赛.html"><strong aria-hidden="true">1.1.2.</strong> 力扣第234场周赛</a></li><li class="chapter-item expanded "><a href="../../algorithm/leetcode/力扣第235场周赛.html"><strong aria-hidden="true">1.1.3.</strong> 力扣第235场周赛</a></li><li class="chapter-item expanded "><a href="../../algorithm/leetcode/力扣第236场周赛.html"><strong aria-hidden="true">1.1.4.</strong> 力扣第236场周赛</a></li><li class="chapter-item expanded "><a href="../../algorithm/leetcode/力扣第237场周赛.html"><strong aria-hidden="true">1.1.5.</strong> 力扣第237场周赛</a></li><li class="chapter-item expanded "><a href="../../algorithm/leetcode/力扣第240场周赛.html"><strong aria-hidden="true">1.1.6.</strong> 力扣第240场周赛</a></li><li class="chapter-item expanded "><a href="../../algorithm/leetcode/力扣第241场周赛.html"><strong aria-hidden="true">1.1.7.</strong> 力扣第241场周赛</a></li><li class="chapter-item expanded "><a href="../../algorithm/leetcode/力扣第243场周赛.html"><strong aria-hidden="true">1.1.8.</strong> 力扣第243场周赛</a></li><li class="chapter-item expanded "><a href="../../algorithm/leetcode/力扣第244场周赛.html"><strong aria-hidden="true">1.1.9.</strong> 力扣第244场周赛</a></li><li class="chapter-item expanded "><a href="../../algorithm/leetcode/力扣第252场周赛.html"><strong aria-hidden="true">1.1.10.</strong> 力扣第252场周赛</a></li><li class="chapter-item expanded "><a href="../../algorithm/leetcode/力扣第253场周赛.html" class="active"><strong aria-hidden="true">1.1.11.</strong> 力扣第253场周赛</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../tool/index.html"><strong aria-hidden="true">2.</strong> 工具</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../tool/git/index.html"><strong aria-hidden="true">2.1.</strong> git</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../tool/git/gitflow.html"><strong aria-hidden="true">2.1.1.</strong> gitflow</a></li></ol></li><li class="chapter-item expanded "><a href="../../tool/linux/index.html"><strong aria-hidden="true">2.2.</strong> linux</a></li><li class="chapter-item expanded "><a href="../../tool/测试硬盘性能.html"><strong aria-hidden="true">2.3.</strong> 测试硬盘性能</a></li></ol></li><li class="chapter-item expanded "><a href="../../bigdata/index.html"><strong aria-hidden="true">3.</strong> 大数据</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../bigdata/hive_metastore_java_api.html"><strong aria-hidden="true">3.1.</strong> hive metastore java api</a></li><li class="chapter-item expanded "><a href="../../bigdata/flink/index.html"><strong aria-hidden="true">3.2.</strong> Flink</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../bigdata/flink/Flink任务提交入口.html"><strong aria-hidden="true">3.2.1.</strong> Flink任务提交入口</a></li></ol></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">sugar-note</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="力扣第253场周赛"><a class="header" href="#力扣第253场周赛">力扣第253场周赛</a></h1>
+<h2 id="题一-a-hrefhttpsleetcode-cncomproblemscheck-if-string-is-a-prefix-of-array检查字符串是否为数组前缀a"><a class="header" href="#题一-a-hrefhttpsleetcode-cncomproblemscheck-if-string-is-a-prefix-of-array检查字符串是否为数组前缀a">题一 <a href="https://leetcode-cn.com/problems/check-if-string-is-a-prefix-of-array/">检查字符串是否为数组前缀</a></a></h2>
+<h3 id="描述"><a class="header" href="#描述">描述</a></h3>
+<p>给你一个字符串 s 和一个字符串数组 words ，请你判断 s 是否为 words 的 前缀字符串 。</p>
+<p>字符串 s 要成为 words 的 前缀字符串 ，需要满足：s 可以由 words 中的前 k（k 为 正数 ）个字符串按顺序相连得到，且 k 不超过 words.length 。</p>
+<p>如果 s 是 words 的 前缀字符串 ，返回 true ；否则，返回 false 。</p>
+<p>示例 1：</p>
+<p>输入：s = &quot;iloveleetcode&quot;, words = [&quot;i&quot;,&quot;love&quot;,&quot;leetcode&quot;,&quot;apples&quot;]
+输出：true
+解释：
+s 可以由 &quot;i&quot;、&quot;love&quot; 和 &quot;leetcode&quot; 相连得到。
+示例 2：</p>
+<p>输入：s = &quot;iloveleetcode&quot;, words = [&quot;apples&quot;,&quot;i&quot;,&quot;love&quot;,&quot;leetcode&quot;]
+输出：false
+解释：
+数组的前缀相连无法得到 s 。</p>
+<h3 id="思路"><a class="header" href="#思路">思路</a></h3>
+<p>直接遍历。</p>
+<h3 id="代码"><a class="header" href="#代码">代码</a></h3>
+<pre><code class="language-java">/**
+ * @author mikusugar
+ */
+public class N1 {
+    public boolean isPrefixString(String s, String[] words) {
+        final StringBuilder sb = new StringBuilder();
+        for (String str : words) {
+            sb.append(str);
+            if (sb.toString().equals(s)) return true;
+        }
+        return false;
+    }
+}
+</code></pre>
+<h2 id="题二-a-hrefhttpsleetcode-cncomproblemsremove-stones-to-minimize-the-total移除石子使总数最小a"><a class="header" href="#题二-a-hrefhttpsleetcode-cncomproblemsremove-stones-to-minimize-the-total移除石子使总数最小a">题二 <a href="https://leetcode-cn.com/problems/remove-stones-to-minimize-the-total/">移除石子使总数最小</a></a></h2>
+<h3 id="描述-1"><a class="header" href="#描述-1">描述</a></h3>
+<p>给你一个整数数组 piles ，数组 下标从 0 开始 ，其中 piles[i] 表示第 i 堆石子中的石子数量。另给你一个整数 k ，请你执行下述操作 恰好 k 次：</p>
+<p>选出任一石子堆 piles[i] ，并从中 移除 floor(piles[i] / 2) 颗石子。
+注意：你可以对 同一堆 石子多次执行此操作。</p>
+<p>返回执行 k 次操作后，剩下石子的 最小 总数。</p>
+<p>floor(x) 为 小于 或 等于 x 的 最大 整数。（即，对 x 向下取整）。</p>
+<p>示例 1：</p>
+<p>输入：piles = [5,4,9], k = 2
+输出：12
+解释：可能的执行情景如下：</p>
+<ul>
+<li>对第 2 堆石子执行移除操作，石子分布情况变成 [5,4,5] 。</li>
+<li>对第 0 堆石子执行移除操作，石子分布情况变成 [3,4,5] 。
+剩下石子的总数为 12 。
+示例 2：</li>
+</ul>
+<p>输入：piles = [4,3,6,7], k = 3
+输出：12
+解释：可能的执行情景如下：</p>
+<ul>
+<li>对第 2 堆石子执行移除操作，石子分布情况变成 [4,3,3,7] 。</li>
+<li>对第 3 堆石子执行移除操作，石子分布情况变成 [4,3,3,4] 。</li>
+<li>对第 0 堆石子执行移除操作，石子分布情况变成 [2,3,3,4] 。
+剩下石子的总数为 12 。</li>
+</ul>
+<p>提示：</p>
+<p>1 &lt;= piles.length &lt;= 10^5
+1 &lt;= piles[i] &lt;= 10^4
+1 &lt;= k &lt;= 10^5</p>
+<h3 id="思路-1"><a class="header" href="#思路-1">思路</a></h3>
+<p>贪心，每次选当前最大的堆。</p>
+<p>用优先队列。</p>
+<h3 id="代码-1"><a class="header" href="#代码-1">代码</a></h3>
+<pre><code class="language-java">import java.util.PriorityQueue;
+
+/**
+ * @author mikusugar
+ */
+public class N2 {
+    public int minStoneSum(int[] piles, int k) {
+        final PriorityQueue&lt;Integer&gt; pq = new PriorityQueue&lt;&gt;((o1, o2) -&gt; Integer.compare(o2, o1));
+        for (int num : piles) pq.add(num);
+        while (k-- &gt; 0) {
+            final int cur = pq.poll();
+            pq.add(cur - (int) Math.floor(cur / 2.0));
+        }
+        int res = 0;
+        while (!pq.isEmpty()) res += pq.poll();
+        return res;
+    }
+}
+</code></pre>
+<h2 id="题三-a-hrefhttpsleetcode-cncomproblemsminimum-number-of-swaps-to-make-the-string-balanced使字符串平衡的最小交换次数a"><a class="header" href="#题三-a-hrefhttpsleetcode-cncomproblemsminimum-number-of-swaps-to-make-the-string-balanced使字符串平衡的最小交换次数a">题三 <a href="https://leetcode-cn.com/problems/minimum-number-of-swaps-to-make-the-string-balanced/">使字符串平衡的最小交换次数</a></a></h2>
+<h3 id="描述-2"><a class="header" href="#描述-2">描述</a></h3>
+<p>给你一个字符串 s ，下标从 0 开始 ，且长度为偶数 n 。字符串 恰好 由 n / 2 个开括号 '[' 和 n / 2 个闭括号 ']' 组成。</p>
+<p>只有能满足下述所有条件的字符串才能称为 平衡字符串 ：</p>
+<p>字符串是一个空字符串，或者
+字符串可以记作 AB ，其中 A 和 B 都是 平衡字符串 ，或者
+字符串可以写成 [C] ，其中 C 是一个 平衡字符串 。
+你可以交换 任意 两个下标所对应的括号 任意 次数。</p>
+<p>返回使 s 变成 平衡字符串 所需要的 最小 交换次数。</p>
+<p>示例 1：</p>
+<p>输入：s = &quot;][][&quot; 输出：1 解释：交换下标 0 和下标 3 对应的括号，可以使字符串变成平衡字符串。 最终字符串变成 &quot;[[]]&quot; 。
+示例 2：</p>
+<p>输入：s = &quot;]]][[[&quot;
+输出：2
+解释：执行下述操作可以使字符串变成平衡字符串：</p>
+<ul>
+<li>交换下标 0 和下标 4 对应的括号，s = &quot;[]][[]&quot; 。</li>
+<li>交换下标 1 和下标 5 对应的括号，s = &quot;[[][]]&quot; 。
+最终字符串变成 &quot;[[][]]&quot; 。
+示例 3：</li>
+</ul>
+<p>输入：s = &quot;[]&quot;
+输出：0
+解释：这个字符串已经是平衡字符串。</p>
+<h3 id="思路-2"><a class="header" href="#思路-2">思路</a></h3>
+<p>找规律。</p>
+<blockquote>
+<p>交换一次最多可以令两对配对。</p>
+</blockquote>
+<p>令无法配对的对数为f，可得 res=f/2+f%2;</p>
+<h3 id="代码-2"><a class="header" href="#代码-2">代码</a></h3>
+<pre><code class="language-java">/**
+ * @author mikusugar
+ */
+public class N3 {
+    public int minSwaps(String s) {
+        int f = 0;
+        int a = 0;
+        int b = 0;
+        final char[] strs = s.toCharArray();
+        for (char c : strs) {
+            if (c == ']') {
+                a++;
+                if (a &gt; b) {
+                    f++;
+                    a--;
+                }
+            } else b++;
+        }
+        return f / 2 + f % 2;
+    }
+}
+</code></pre>
+<h2 id="题四-a-hrefhttpsleetcode-cncomproblemsfind-the-longest-valid-obstacle-course-at-each-position找出到每个位置为止最长的有效障碍赛跑路线a"><a class="header" href="#题四-a-hrefhttpsleetcode-cncomproblemsfind-the-longest-valid-obstacle-course-at-each-position找出到每个位置为止最长的有效障碍赛跑路线a">题四 <a href="https://leetcode-cn.com/problems/find-the-longest-valid-obstacle-course-at-each-position/">找出到每个位置为止最长的有效障碍赛跑路线</a></a></h2>
+<h3 id="描述-3"><a class="header" href="#描述-3">描述</a></h3>
+<p>你打算构建一些障碍赛跑路线。给你一个 下标从 0 开始 的整数数组 obstacles ，数组长度为 n ，其中 obstacles[i] 表示第 i 个障碍的高度。</p>
+<p>对于每个介于 0 和 n - 1 之间（包含 0 和 n - 1）的下标  i ，在满足下述条件的前提下，请你找出 obstacles 能构成的最长障碍路线的长度：</p>
+<p>你可以选择下标介于 0 到 i 之间（包含 0 和 i）的任意个障碍。
+在这条路线中，必须包含第 i 个障碍。
+你必须按障碍在 obstacles 中的 出现顺序 布置这些障碍。
+除第一个障碍外，路线中每个障碍的高度都必须和前一个障碍 相同 或者 更高 。
+返回长度为 n 的答案数组 ans ，其中 ans[i] 是上面所述的下标 i 对应的最长障碍赛跑路线的长度。</p>
+<p>示例 1：</p>
+<p>输入：obstacles = [1,2,3,2]
+输出：[1,2,3,3]
+解释：每个位置的最长有效障碍路线是：</p>
+<ul>
+<li>i = 0: [1], [1] 长度为 1</li>
+<li>i = 1: [1,2], [1,2] 长度为 2</li>
+<li>i = 2: [1,2,3], [1,2,3] 长度为 3</li>
+<li>i = 3: [1,2,3,2], [1,2,2] 长度为 3
+示例 2：</li>
+</ul>
+<p>输入：obstacles = [2,2,1]
+输出：[1,2,1]
+解释：每个位置的最长有效障碍路线是：</p>
+<ul>
+<li>i = 0: [2], [2] 长度为 1</li>
+<li>i = 1: [2,2], [2,2] 长度为 2</li>
+<li>i = 2: [2,2,1], [1] 长度为 1
+示例 3：</li>
+</ul>
+<p>输入：obstacles = [3,1,5,6,4,2]
+输出：[1,1,2,3,2,2]
+解释：每个位置的最长有效障碍路线是：</p>
+<ul>
+<li>i = 0: [3], [3] 长度为 1</li>
+<li>i = 1: [3,1], [1] 长度为 1</li>
+<li>i = 2: [3,1,5], [3,5] 长度为 2, [1,5] 也是有效的障碍赛跑路线</li>
+<li>i = 3: [3,1,5,6], [3,5,6] 长度为 3, [1,5,6] 也是有效的障碍赛跑路线</li>
+<li>i = 4: [3,1,5,6,4], [3,4] 长度为 2, [1,4] 也是有效的障碍赛跑路线</li>
+<li>i = 5: [3,1,5,6,4,2], [1,2] 长度为 2</li>
+</ul>
+<h3 id="思路-3"><a class="header" href="#思路-3">思路</a></h3>
+<p>仔细看题目得出，这题就是求最长递增子序列。。。</p>
+<p>直接动态规划<code>：O(n^2)</code>没有通过，二分加贪心通过<code>O(nlogn)</code>。</p>
+<h3 id="代码-3"><a class="header" href="#代码-3">代码</a></h3>
+<pre><code class="language-java">/**
+ * @author mikusugar
+ */
+public class N4 {
+    public int[] longestObstacleCourseAtEachPosition(int[] obstacles) {
+        int maxL = 0;
+        int[] dp = new int[obstacles.length];
+        int[] ans = new int[obstacles.length];
+        for (int i = 0; i &lt; obstacles.length; i++) {
+            int num = obstacles[i];
+            int left = 0, right = maxL;
+            while (left &lt; right) {
+                int mid = left + (right - left) / 2;
+                if (dp[mid] &lt;= num)
+                    left = mid + 1;
+                else
+                    right = mid;
+            }
+            dp[left] = num;
+            if (left == maxL) {
+                maxL++;
+            }
+            ans[i] = left + 1;
+        }
+        return ans;
+    }
+}
+</code></pre>
+
+                    </main>
+
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../algorithm/leetcode/力扣第252场周赛.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../../tool/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+                <div id="disqus_thread"></div>
+                <script>
+                    /**
+                     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+                    /*
+                    var disqus_config = function () {
+                    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    };
+                    */
+                    (function() { // DON'T EDIT BELOW THIS LINE
+                        var d = document, s = d.createElement('script');
+                        s.src = 'https://mikusugar-me.disqus.com/embed.js';
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../algorithm/leetcode/力扣第252场周赛.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../../tool/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>
